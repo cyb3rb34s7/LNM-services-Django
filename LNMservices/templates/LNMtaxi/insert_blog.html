@@ -1,0 +1,374 @@
+{% extends 'common/base_navbar.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .blog__header {
+      background-color: gray;
+      height: 40px;
+    }
+
+    .a_tag {
+      color: white;
+      margin-left: 5%;
+      margin-top: 10%;
+
+    }
+
+    .a_tag:hover {
+      color: red;
+    }
+
+
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=number],
+    select {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=date],
+    select {
+      width: 20%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=time],
+    select {
+      width: 20%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #555555;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: black;
+    }
+
+    .class__div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .header__div {
+      margin-top: -4px;
+      padding-top: 8px;
+    }
+  </style>
+  <style>
+    .register {
+      background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+      margin-top: 3%;
+      padding: 3%;
+    }
+
+    .register-left {
+      text-align: center;
+      color: #fff;
+      margin-top: 4%;
+    }
+
+    .register-left input {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+      width: 60%;
+      background: #f8f9fa;
+      font-weight: bold;
+      color: #383d41;
+      margin-top: 30%;
+      margin-bottom: 3%;
+      cursor: pointer;
+    }
+
+    .register-right {
+      background: #f8f9fa;
+      border-top-left-radius: 10% 50%;
+      border-bottom-left-radius: 10% 50%;
+    }
+
+    .register-left img {
+      margin-top: 15%;
+      margin-bottom: 5%;
+      width: 25%;
+      -webkit-animation: mover 2s infinite alternate;
+      animation: mover 1s infinite alternate;
+    }
+
+    @-webkit-keyframes mover {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes mover {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .register-left p {
+      font-weight: lighter;
+      padding: 12%;
+      margin-top: -9%;
+    }
+
+    .register .register-form {
+      padding: 10%;
+      margin-top: 10%;
+    }
+
+    .btnRegister {
+      float: right;
+      margin-top: 10%;
+      border: none;
+      border-radius: 1.5rem;
+      padding: 2%;
+      background: #0062cc;
+      color: #fff;
+      font-weight: 600;
+      width: 50%;
+      cursor: pointer;
+    }
+
+    .register .nav-tabs {
+      margin-top: 3%;
+      border: none;
+      background: #0062cc;
+      border-radius: 1.5rem;
+      width: 28%;
+      float: right;
+    }
+
+    .register .nav-tabs .nav-link {
+      padding: 2%;
+      height: 34px;
+      font-weight: 600;
+      color: #fff;
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
+
+    .register .nav-tabs .nav-link:hover {
+      border: none;
+    }
+
+    .register .nav-tabs .nav-link.active {
+      width: 100px;
+      color: #0062cc;
+      border: 2px solid #0062cc;
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+    }
+
+    .register-heading {
+      text-align: center;
+      margin-top: 8%;
+      margin-bottom: -15%;
+      color: #495057;
+    }
+  </style>
+
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <header class="home_div1   ">
+
+  </header>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+
+  <!--    <div class="class__div">-->
+  <!--    <form action='{% url "insert_blogs" %}' method="POST" enctype="multipart/form-data">-->
+  <!--        {% csrf_token %}-->
+  <!--        {{form.as_p}}-->
+  <!--        <input type="submit" name="Insert Blog">-->
+  <!--    </form>-->
+  <!--        </div>-->
+
+  <!-- <div class="class__div">
+    <form method="POST" action="{% url 'insert_blogs' %}">
+      {% csrf_token %}
+      <label for="pickup">PickUp</label>
+      <input type="text" id="pickup" name="pickup" placeholder="Enter the point of pickup" required>
+
+      <label for="drop">Drop</label>
+      <input type="text" id="drop" name="drop" placeholder="Enter Destination.." required>
+      <label for="Space">Space</label><br>
+      <input type="number" id="Space" name="space" placeholder="Enter the number of spaces available.."
+        required><br><br>
+      <label for="Contact num">Contact Number</label><br>
+      <input type="number" id="Contact num" name="contact_num" placeholder="Enter Contact Number.." required><br><br>
+      <label for="Fare">Fare</label><br>
+      <input type="number" id="Fare" name="fare" placeholder="Enter the price.." required><br><br>
+      <label for="Date">Date</label><br>
+      <input type="date" id="Date" name="date" required><br><br>
+      <label for="Time">Time</label><br>
+      <input type="time" id="Time" name="time" required><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div> -->
+
+
+</body>
+
+</html>
+
+
+<div class="container-fit register mt-0">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Welcome</h3>
+      <p>Enter Your details to find a Partner for your rides!</p>
+      <a href="/LNMtaxi" class="btn btn-light rounded-pill">Go back to Homepage</a><br />
+    </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Add Your Requirements</h3>
+          <div class="row register-form">
+            <div class="col-md-6">
+              <form method="POST" action="{% url 'insert_blogs' %}">
+                {% csrf_token %}
+
+                <div class="form-group">
+                  <input type="text" id="pickup" name="pickup" class="form-control" placeholder="Pickup Location"
+                    value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" id="Space" name="space" class="form-control" placeholder="Space Available"
+                    value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" id="Fare" name="fare" class="form-control" placeholder="₹ Fare..." value="" />
+                </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" id="drop" name="drop" class="form-control" placeholder="Drop Location" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" id="Contact num" name="contact_num" minlength="10" maxlength="10" name="txtEmpPhone"
+                  class="form-control" placeholder="Your Phone Number*" value="" />
+              </div>
+              <div class="form-group">
+                <input style="width:200px;" type="date" id="Date" name="date" class="form-control"
+                  placeholder="Date Of journey" value="" />
+              </div>
+              <div class="form-group">
+                <input style="width:200px;" type="time" id="Time" name="time" class="form-control" placeholder="Time"
+                  value="" />
+              </div>
+              <input type="submit" class="btnRegister" value="Submit" />
+            </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <h3 class="register-heading">Apply as a Hirer</h3>
+          <div class="row register-form">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="First Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Last Name *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+              </div>
+
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+              </div>
+              <div class="form-group">
+                <select class="form-control">
+                  <option class="hidden" selected disabled>Please select your Sequrity Question</option>
+                  <option>What is your Birthdate?</option>
+                  <option>What is Your old Phone Number</option>
+                  <option>What is your Pet Name?</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="`Answer *" value="" />
+              </div>
+              <input type="submit" class="btnRegister" value="Register" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

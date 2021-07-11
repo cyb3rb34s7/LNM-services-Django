@@ -1,0 +1,127 @@
+{% extends 'common/base_navbar.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background: black;
+  }
+
+  .button2 {
+    background-color: #008CBA;
+  }
+
+  /* Blue */
+  .button3 {
+    background-color: #f44336;
+  }
+
+  /* Red */
+  .button4 {
+    background-color: #e7e7e7;
+    color: black;
+  }
+
+  /* Gray */
+  .button5 {
+    background-color: #555555;
+  }
+
+  /* Black */
+</style>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="{% static 'shop/home/csss/stylee.css' %}" type="text/css" media="all" />
+  <script src="{% static 'shop/home/js/jquery-1.4.1.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'shop/home/js/jquery.jcarousel.pack.js' %}" type="text/javascript"></script>
+  <script src="{% static 'shop/home/js/jquery.slide.js' %}" type="text/javascript"></script>
+  <script src="{% static 'shop/home/js/jquery-func.js' %}" type="text/javascript"></script>
+</head>
+
+<body>
+  <style>
+  </style>
+
+  <div class="container-fluid">
+    <div class="shell">
+
+      <div class="options">
+        <a href="{% url 'LNMshop_home' %}" style="font-size:30px"><strong>LNM-shop</strong></a>
+        <div class="right"><span class="left more-links"> <a href="{% url 'insert_product' %}"><strong>Place your add
+                +</strong></a> <a href="{% url 'user_wishlist' %}"><strong>Wishlist</strong></a> <a
+              href="{% url 'view_product' %}"><strong>Your Products</strong></a> </span> </div>
+      </div>
+
+      <div id="content">
+
+        <div class="tabs">
+          <ul>
+            {% for category in categories %}
+            <li><a href="#" class="active red"><span>{{category}}</span></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Tabs here for loop-->
+        <!-- Container -->
+        <div class="tabbed">
+          {% for category in categories %}
+          <!-- First Tab Content -->
+          <div class="tab-content" style="display:block;">
+            <div class="items">
+              <ul>
+                {% for product in products %}
+                {% if product.category == category or category == 'All' %}
+                <li>
+                  <img src="{{product.photo.url}}" class="image" width="380" height="220" align="right"
+                    style="border: 5px solid #555;border-radius: 25px;" />
+                  <p> <strong>SELLER NAME:&nbsp;&nbsp;</strong> <span>{{product.username_id}}</span><br /><br /><br />
+                    <strong>ITEM Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                    <span>{{product.name}}</span><br /><br /><br /><br />
+                  <p class="price"><strong>₹ {{product.price}}</strong></p>
+                  <a href="{% url 'insert_wishlist' id=product.id %}"><button class="button button5">ADD TO
+                      WISHLIST</button></a>
+                  <br />
+                </li>
+                {% endif%}
+                {% endfor %}
+              </ul>
+              <div class="cl">&nbsp;</div>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!-- End First Tab Content -->
+
+
+          <!-- End Third Tab Content -->
+        </div>
+        <!-- Brands -->
+
+        <!-- End Brands -->
+        <!-- Footer -->
+
+        <!-- End Footer -->
+
+        <!-- End Container -->
+      </div>
+      <!-- End Content -->
+    </div>
+
+    <!-- End Main -->
+  </div>
+</body>
+{% endblock %}

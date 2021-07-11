@@ -1,0 +1,91 @@
+{% extends 'common/base_navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+
+    .box{
+    margin: auto;
+    height: 290px;
+    width: 500px;
+    background: white;
+    display: flex;
+    align-text: right;
+    border: 10px solid black;
+    padding: 60px;
+    justify-content: center;
+    }
+</style>
+
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'about/fonts/icomoon/style.css' %}">
+
+
+    <!-- Bootstrap CSS -->
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container ">
+      <div class="row mb-5 ">
+        <div class="col-12 text-center">
+          <h2 class="my-5">About Us !</h2>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-left-half mb-5">
+      <div class="container owl-2-style">
+
+        <div class="owl-carousel owl-2 box" >
+
+          <div class="media-29101">
+            <img src="{% static 'about/images/person_1_sm.jpg' %}" alt="Image" class="img-fluid">
+            <h3><a href="#">Joshua Jones</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, dolorem iusto officia! Quis tenetur maxime, laboriosam saepe, voluptate necessitatibus tempora!</p>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <div class="media-29101">
+            <img src="{% static 'about/images/person_2_sm.jpg' %}" alt="Image" class="img-fluid">
+            <h3><a href="#">Kellie Kenney</a></h3>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <div class="media-29101">
+            <img src="{% static 'about/images/person_3_sm.jpg' %}" alt="Image" class="img-fluid">
+            <h3><a href="#">Will Reagan</a></h3>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  </body>
+</html>
+
+
+{% endblock %}
