@@ -1,7 +1,268 @@
-{% extends 'common/base_navbar.html' %}
 {% load static %}
 {% block content %}
-<style>
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LNM-Shop</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+
+  <script src="https://kit.fontawesome.com/347ca80ae4.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    body {
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: nowrap;
+      height: 100vh;
+      height: -webkit-fill-available;
+      max-height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .btn-dark:hover {
+      background-color: rgb(75, 87, 201) !important;
+    }
+
+    .b-example-divider {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      pointer-events: none;
+      fill: currentColor;
+    }
+
+    .dropdown-toggle {
+      outline: 0;
+    }
+
+    .nav-flush .nav-link {
+      border-radius: 0;
+    }
+
+    .btn-toggle {
+      display: inline-flex;
+      align-items: center;
+      padding: .25rem .5rem;
+      font-weight: 600;
+      color: rgba(0, 0, 0, .65);
+      background-color: transparent;
+      border: 0;
+    }
+
+    .btn-toggle:hover,
+    .btn-toggle:focus {
+      color: rgba(0, 0, 0, .85);
+      background-color: #d2f4ea;
+    }
+
+    .btn-toggle::before {
+      width: 1.25em;
+      line-height: 0;
+      content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+      transition: transform .35s ease;
+      transform-origin: .5em 50%;
+    }
+
+    .btn-toggle[aria-expanded="true"] {
+      color: rgba(0, 0, 0, .85);
+    }
+
+    .btn-toggle[aria-expanded="true"]::before {
+      transform: rotate(90deg);
+    }
+
+    .btn-toggle-nav a {
+      display: inline-flex;
+      padding: .1875rem .5rem;
+      margin-top: .125rem;
+      margin-left: 1.25rem;
+      text-decoration: none;
+    }
+
+    .btn-toggle-nav a:hover,
+    .btn-toggle-nav a:focus {
+      background-color: #d2f4ea;
+    }
+
+    .scrollarea {
+      overflow-y: auto;
+    }
+
+    .fw-semibold {
+      font-weight: 600;
+    }
+
+    .lh-tight {
+      line-height: 1.25;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+
+</head>
+
+<body>
+  <main>
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">LNM-services</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="btn btn-lg btn-dark btn-block text-white d-grid d-flex align-items-center mb-1">
+            <i class="w-25 fas fa-cart-arrow-down fa-lg me-3"></i>
+            LNM-Shop
+          </a>
+        </li>
+        <li>
+
+          <div class="btn-group dropend ">
+            <button
+              class="btn btn-lg btn-dark btn-block text-white d-grid d-flex align-items-center mb-2 ms-3 dropdown-toggle"
+              type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class=" w-25 fas fa-cubes fa-lg me-3" aria-hidden="true"></i>
+              Categories
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+
+        </li>
+        <li>
+          <a href="#" class=" btn btn-lg btn-dark btn-block text-white d-grid d-flex align-items-center mb-2">
+            <i class="w-25 fas fa-bullhorn fa-lg me-3" aria-hidden="true"></i>
+            About Us
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-lg btn-dark btn-block text-white d-grid d-flex align-items-center mb-1">
+            <i class="w-25 fas fa-address-book fa-lg me-3" aria-hidden="true"></i>
+            Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-lg btn-dark btn-block text-white d-grid d-flex align-items-center mb-1">
+            <i class="w-25 fas fa-child fa-lg me-3" aria-hidden="true"></i>
+            Profile
+          </a>
+        </li>
+
+
+        <li>
+          <nav class="dashboard-nav-list">
+        </li>
+
+      </ul>
+
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>mdo</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="container-fluid">
+      {% for product in products %}
+      <div class="card mb-3" style="max-width: 400px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{product.photo.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text"><strong>SELLER NAME:</strong> <span>{{product.username_id}}</span><br /><br /><br />
+                <strong>ITEM Name:</strong>
+                <br />
+              <p class="price"><strong>₹ {{product.price}}</strong></p>
+              <a href="{% url 'insert_wishlist' id=product.id %}"><button class="button button5">ADD TO
+                  WISHLIST</button></a>
+              <br />.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+
+
+
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>/* global bootstrap: false */
+    (function () {
+      'use strict'
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+    })()
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+{% comment %} <style>
   .button {
     background-color: #4CAF50;
     /* Green */
@@ -123,5 +384,5 @@
 
     <!-- End Main -->
   </div>
-</body>
+</body> {% endcomment %}
 {% endblock %}

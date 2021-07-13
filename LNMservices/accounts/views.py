@@ -12,7 +12,8 @@ def login(request):
         context = {'username': request.session['uid']}
         return render(request, 'accounts/services.html', context)
     if request.method == 'POST':
-        curr_user = Accounts.objects.all().filter(pk=request.POST["username"], password=request.POST["password"])
+        curr_user = Accounts.objects.all().filter(
+            pk=request.POST["username"], password=request.POST["password"])
         if curr_user.count() == 1:
             request.session['uid'] = request.POST["username"]
             context = {'username': request.session['uid']}
@@ -55,8 +56,11 @@ def updatePassword(request):
 
 
 def logout(request):
-    del request.session['uid']
-    return redirect('login')
+    if request.session.get('uid'):
+        del request.session['uid']
+        return redirect('login')
+    else:
+        return HttpResponse("<h1>LogIn to kar lawde</h1>")
 
 
 def contact(request):
